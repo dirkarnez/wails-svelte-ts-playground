@@ -2,6 +2,9 @@ wails-svelte-ts-playground
 ==========================
 > Wails requires that the WebView2 runtime is installed. Some Windows installations will already have this installed. You can check using the wails doctor command.
 
+### Notes
+- Use [wailsapp/xgo: Cross compilation docker image for Wails](https://github.com/wailsapp/xgo)
+
 ### svelte
 ```
 wails init -n myproject -t svelte-ts
