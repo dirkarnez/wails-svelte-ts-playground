@@ -10,3 +10,4 @@ wails init -n myproject -t svelte-ts
 ### Tutorials
 - [git-jiadong/wechatDataBackup: 一键导出PC微信聊天记录工具](https://github.com/git-jiadong/wechatDataBackup)
 - [driverbox/driver-box: Driver installer for sytem builders/admins](https://github.com/driverbox/driver-box)
+  - https://github.com/driverbox/driver-box/blob/main/.github/workflows/build_and_release.yml
