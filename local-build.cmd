@@ -18,4 +18,5 @@ set PATH=^
 
 cd myproject &&^
 wails build &&^
-pause
+cd /d "%~dp0"
+echo done
