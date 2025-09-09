@@ -56,7 +56,7 @@ jobs:
 
       - name: Build
         if: ${{ matrix.os == 'windows-latest' }}
-        shell: bash
+        shell: cmd
         run: |
           .\local-build.cmd
 
