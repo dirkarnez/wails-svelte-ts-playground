@@ -18,24 +18,52 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Setup go
+        if: ${{ matrix.os != 'windows-latest' }}
         uses: actions/setup-go@v2
         with:
-          go-version: '1.21.0' # The Go version to download (if necessary) and use.
+          go-version: '1.25.0' # The Go version to download (if necessary) and use.
+
+      - name: Setup node
+        uses: actions/setup-node@v5
+        if: ${{ matrix.os != 'windows-latest' }}
+        with:
+          node-version: '22.x'
+
+      - name: Setup go and node
+        if: ${{ matrix.os == 'windows-latest' }}
+        shell: cmd
+        run: |
+          .\setup.cmd
           
-      - run: go get .
-      
-      - run: go build
-      
+      - name: Build
+        if: ${{ matrix.os != 'windows-latest' }}
+        shell: bash
+        working-directory: 'myproject'
+        run: |
+          go install github.com/wailsapp/wails/v2/cmd/wails@latest && \
+          wails version && \
+          wails build
+
+      - name: Build
+        if: ${{ matrix.os == 'windows-latest' }}
+        shell: bash
+        run: |
+          .\local-build.cmd
+
+      - shell: bash
+        run: |
+          ls -R
+
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          path: ${{ github.event.repository.name }}*
+          directory: 'myproject/build/bin'
           filename: "${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
+          artifacts: "myproject/build/bin/${{ github.event.repository.name }}-${{ github.ref_name }}-${{ matrix.os }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
