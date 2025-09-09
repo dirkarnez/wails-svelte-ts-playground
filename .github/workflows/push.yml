@@ -20,11 +20,13 @@ jobs:
       - name: Install webkit2gtk
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
-          sudo apt-get update -y \
-          && sudo apt-get -y --no-install-recommends install \
+          sudo deb http://gb.archive.ubuntu.com/ubuntu jammy main && \
+          sudo apt-get update -y && \
+          sudo apt-get -y --no-install-recommends install \
             build-essential \
             webkit2gtk-4.0 \
-            gtk+-3.0
+            gtk+-3.0 \
+            libwebkit2gtk-4.0
       
       - name: Setup go
         if: ${{ matrix.os != 'windows-latest' }}
