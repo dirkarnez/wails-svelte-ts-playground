@@ -5,7 +5,7 @@ wails-svelte-ts-playground
 ### Notes
 - Use [wailsapp/xgo: Cross compilation docker image for Wails](https://github.com/wailsapp/xgo)
 
-### svelte
+### Svelte
 ```
 wails init -n myproject -t svelte-ts
 ```
@@ -14,3 +14,12 @@ wails init -n myproject -t svelte-ts
 - [git-jiadong/wechatDataBackup: 一键导出PC微信聊天记录工具](https://github.com/git-jiadong/wechatDataBackup)
 - [driverbox/driver-box: Driver installer for sytem builders/admins](https://github.com/driverbox/driver-box)
   - https://github.com/driverbox/driver-box/blob/main/.github/workflows/build_and_release.yml
+    - ```yaml
+      - name: Download and extract WebView2 runtime
+        run: |
+          cd build\bin # myproject/build/bin
+          curl -o webview2.cab -L https://github.com/westinyang/WebView2RuntimeArchive/releases/download/132.0.2957.140/Microsoft.WebView2.FixedVersionRuntime.132.0.2957.140.${{ "x86" or "x64" }}.cab
+          mkdir bin
+          expand -r webview2.cab -F:* bin
+          move bin\Microsoft.WebView2.FixedVersionRuntime.* bin\WebView2
+      ```
