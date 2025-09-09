@@ -12,18 +12,19 @@ wails init -n myproject -t svelte-ts
 
 ### Tutorials
 - [git-jiadong/wechatDataBackup: 一键导出PC微信聊天记录工具](https://github.com/git-jiadong/wechatDataBackup)
-  - ```yaml
-    - name: Build wails
-      uses: dAppServer/wails-build-action@main
-      id: build
-      with:
-        build-name: ${{ matrix.build.name }}
-        sign: false
-        build-platform: ${{ matrix.build.platform }}
-        package: true
-        go-version: '1.21'
-        wails-version: "v2.9.1"
-    ```
+  - https://github.com/git-jiadong/wechatDataBackup/blob/main/.github/workflows/publish.yml
+    - ```yaml
+      - name: Build wails
+        uses: dAppServer/wails-build-action@main
+        id: build
+        with:
+          build-name: ${{ matrix.build.name }}
+          sign: false
+          build-platform: ${{ matrix.build.platform }}
+          package: true
+          go-version: '1.21'
+          wails-version: "v2.9.1"
+      ```
 - [driverbox/driver-box: Driver installer for sytem builders/admins](https://github.com/driverbox/driver-box)
   - https://github.com/driverbox/driver-box/blob/main/.github/workflows/build_and_release.yml
     - ```yaml
