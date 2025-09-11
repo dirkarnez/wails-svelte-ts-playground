@@ -4,7 +4,18 @@ wails-svelte-ts-playground
 
 ### Notes
 - Use [wailsapp/xgo: Cross compilation docker image for Wails](https://github.com/wailsapp/xgo)
-
+- try frameless
+  - ```go
+    wails.Run(&options.App{
+  		Frameless: true,
+  		Windows: &windows.Options{
+  			WebviewIsTransparent:              false,
+  			WindowIsTranslucent:               false,
+  			Theme:                             windows.Theme(windows.Dark),
+  			DisableFramelessWindowDecorations: true,
+  		}
+    )
+    ```
 ### Svelte
 ```
 wails init -n myproject -t svelte-ts
