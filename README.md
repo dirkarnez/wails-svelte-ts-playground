@@ -4,7 +4,7 @@ wails-svelte-ts-playground
 
 ### Notes
 - Use [wailsapp/xgo: Cross compilation docker image for Wails](https://github.com/wailsapp/xgo)
-- try frameless
+- try frameless (See [Options | Wails](https://wails.io/docs/reference/options/))
   - ```go
     wails.Run(&options.App{
   		Frameless: true,
