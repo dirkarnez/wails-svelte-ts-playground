@@ -20,6 +20,7 @@ func main() {
 		Title:  "myproject",
 		Width:  1024,
 		Height: 768,
+		Frameless: true,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
