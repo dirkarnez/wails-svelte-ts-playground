@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <!-- Photon.css -->   
+    <link rel="stylesheet" href="./src/assets/css/photon.min.css">
+    <style>
+      /*
+        This css MUST BE applied to make wail's resizing works again
+      */
+      * {
+        -webkit-user-drag: unset;
+        cursor: unset;
+      }
+
+    </style>
+</head>
+<body>
+<div class="window">
+  <header class="toolbar toolbar-header" style="--wails-draggable: drag">
+    <h1 class="title">Header</h1>
+  </header>
+  <div id="app" class="window-content" style="--wails-draggable: no-drag"></div>
+
+<!--   
+  <footer class="toolbar toolbar-footer">
+    <h1 class="title">Footer</h1>
+  </footer> 
+-->
+</div>
+<script src="./src/main.ts" type="module"></script>
+</body>
+</html>
+
+
+
