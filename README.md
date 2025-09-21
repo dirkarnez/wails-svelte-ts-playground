@@ -21,6 +21,9 @@ wails-svelte-ts-playground
 wails init -n myproject -t svelte-ts
 ```
 
+### Projects
+- [letheanVPN/desktop: Native PWA Desktop Client](https://github.com/letheanVPN/desktop)
+
 ### Tutorials
 - [git-jiadong/wechatDataBackup: 一键导出PC微信聊天记录工具](https://github.com/git-jiadong/wechatDataBackup)
   - https://github.com/git-jiadong/wechatDataBackup/blob/main/.github/workflows/publish.yml
